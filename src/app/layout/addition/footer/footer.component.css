@@ -1,0 +1,11 @@
+.author-box:first-child {
+  margin-left: 2px;
+}
+
+.fade-in-box {
+  animation: fadeIn 3s;
+  -webkit-animation: fadeIn 3s;
+  -moz-animation: fadeIn 3s;
+  -o-animation: fadeIn 3s;
+  -ms-animation: fadeIn 3s;
+}/*# sourceMappingURL=footer.component.css.map */

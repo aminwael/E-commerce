@@ -1,0 +1,39 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container">
+    <a class="navbar-brand" href="#">
+      <img  class="_img" src="../../../../assets/images/freshcart-logo.svg">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-between"  id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+       @if (isLogin==true) {
+        <a class="nav-link px-2" routerLink="home" routerLinkActive="bg-success text-white">{{'navbar.Home' | translate}}</a>
+        <a class="nav-link px-2" routerLink="products" routerLinkActive="bg-success text-white">{{'navbar.Products' | translate}}</a>
+        <a class="nav-link px-2" routerLink="brands" routerLinkActive="bg-success text-white">{{'navbar.Brands' | translate}}</a>
+        <a class="nav-link px-2" routerLink="categories" routerLinkActive="bg-success text-white">{{'navbar.Categories' | translate}}</a>
+        <a class="nav-link px-2" routerLink="cart" routerLinkActive="bg-success text-white">{{'navbar.Cart' | translate}}</a>
+       }
+      </div>
+      <div class="d-flex gap-3 align-items-center">
+        <i class="fa-brands fa-facebook"></i>
+        <i class="fa-brands fa-youtube"></i>
+        <i class="fa-brands fa-twitch"></i>
+        <i class="fa-brands fa-linkedin"></i>
+        <i class="fa-brands fa-instagram"></i>
+        @if (isLogin==false) {
+        <a class="nav-link " routerLink="register" routerLinkActive="bg-success text-white">{{'navbar.Login' | translate}}</a>
+        <a class="nav-link " routerLink="login" routerLinkActive="bg-success text-white">{{'navbar.Register' | translate}}</a>
+      }
+      @else {
+        <a routerLink="setting" class="nav-link cursor-pointer "routerLinkActive="bg-success text-white" >{{'navbar.setting' | translate}}</a>
+        <a (click)='changeLang("en")' class="nav-link cursor-pointer "routerLinkActive="bg-success text-white" >{{'navbar.En' | translate}}</a>
+        <a (click)='changeLang("ar")' class="nav-link cursor-pointer "routerLinkActive="bg-success text-white" >{{'navbar.Ar' | translate}}</a>
+        <a  (click)="_AuthService.logOut()"  class="nav-link cursor-pointer "routerLinkActive="bg-success text-white" >{{'navbar.Logout' | translate}}</a>
+
+      }
+      </div>
+    </div>
+  </div>
+</nav>

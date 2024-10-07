@@ -1,0 +1,39 @@
+import { product } from './../../../shared/interfaces/product';
+import { Component, OnInit } from '@angular/core';
+import { ProductService } from '../../../shared/services/product/product.service';
+import { ActivatedRoute } from '@angular/router';
+
+@Component({
+  selector: 'app-product-details',
+  standalone: true,
+  imports: [],
+  templateUrl: './product-details.component.html',
+  styleUrl: './product-details.component.scss'
+})
+export class ProductDetailsComponent implements OnInit{
+  product!:product
+constructor(private _ProductService:ProductService ,private _ActivatedRoute:ActivatedRoute){}
+ngOnInit(): void {
+this.getProductById();
+}
+getProductById(){
+  let id:string='';
+  this._ActivatedRoute.params.subscribe({
+
+    next:p=>{
+      id=p['id'];
+    }
+  })
+this._ProductService.getProductByID(id).subscribe({
+  next:res=>{
+    this.product=res.data
+    console.log(this.product);
+
+  },
+  error:err=>{
+    console.log(err);
+
+  }
+})
+}
+}

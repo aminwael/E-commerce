@@ -1,0 +1,20 @@
+<div class="row">
+  <div class="col-10 mx-auto text-success">
+    <h1 class="my-5 fs-3 fw-bolder">Shipping Address : </h1>
+    <form formGroup="shippingAddressForm" (ngSubmit)=" submitShippingAddressForm()">
+      <div class="mb-3">
+        <label class="form-label">Details</label>
+        <input formControlName="details" type="text" class="form-control">
+      </div>
+      <div class="mb-3">
+        <label class="form-label">phone</label>
+        <input formControlName="phone" type="text" class="form-control">
+      </div>
+      <div class="mb-3">
+        <label class="form-label">city</label>
+        <input formControlName="city" type="text" class="form-control">
+      </div>
+      <button (click)=" submitShippingAddressForm()" class="btn btn-success d-block ms-auto my-5">Check Out</button>
+    </form>
+  </div>
+</div>

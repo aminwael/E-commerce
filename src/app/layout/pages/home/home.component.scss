@@ -1,0 +1,45 @@
+.yellow-star {
+  color: yellow;
+}
+
+.product-container .btn {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.product-container:hover .btn {
+  opacity: 1;
+}
+// .loading{
+//   height: 100vh;
+// }
+// .big-icon {
+//   font-size: 24px;
+// }
+.spinner-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.spinner {
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-top: 4px solid rgb(0, 128, 100);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;  /* Spin animation */
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+

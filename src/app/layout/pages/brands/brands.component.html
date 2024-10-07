@@ -1,0 +1,43 @@
+
+<section>
+  <div class="example-label">Extended Fab</div>
+  <div class="example-button-row">
+    <div class="example-flex-container">
+      <div class="example-button-container">
+        <button mat-fab extended>
+          <mat-icon>favorite</mat-icon>
+          Basic
+        </button>
+      </div>
+      <div class="example-button-container">
+        <button mat-fab extended disabled>
+          <mat-icon>favorite</mat-icon>
+          Disabled
+        </button>
+      </div>
+      <div class="example-button-container">
+        <a mat-fab extended routerLink=".">
+          <mat-icon>favorite</mat-icon>
+          Link
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<input #searchInput type="text" placeholder="enter your name ....">
+<div class="container">
+  <div class="row">
+    @for (x of list; track $index) {
+      <div class="col-2 p-3">
+        <div>
+          <img class="w-100" [src]="x.Poster">
+          <h1 class="fs-4 fw-bolder">{{x.title}}</h1>
+        </div>
+
+      </div>
+    }
+  </div>
+</div>

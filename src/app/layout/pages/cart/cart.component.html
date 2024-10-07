@@ -1,0 +1,30 @@
+@if(data){
+  <div class="container mx-auto">
+    <h1 class="fs-3 my-3">Shop Cart</h1>
+    <p class="text-success mb-3">Total price : {{data.totalCartPrice}}</p>
+    @for (p of data.products; track $index) {
+      <div class="row bg-body-secondary border-bottom-1 border-white align-items-center">
+        <div class="col-2 p-3">
+          <img [src]="p.product.imageCover" class="w-100">
+        </div>
+        <div class="col-8 p-3">
+          <h2 class="fw-medium fs-2 mt-2">{{p.product.title}}</h2>
+          <p class="my-3 text-success fs-2 fw-medium">Price : {{p.price}} </p>
+          <span (click)="deleteProductFromCart(p.product._id)" class="cursor-pointer mb-2">Remove <i class="fa fa-trash bg-success"></i></span>
+        </div>
+        <div class="col-2 p-3">
+          <button (click)="updateProductCartCount(p.product._id,p.count=p.count+1)" class="text-white bg-success rounded p-1">+</button>
+          <span class="mx-2">{{p.count}}</span>
+          <button (click)="updateProductCartCount(p.product._id,p.count=p.count-1)" class="text-white bg-danger rounded p-1">-</button>
+        </div>
+      </div>
+    }
+    <button class="btn btn-success ms-auto my-5" [routerLink]="['/shippingAddress',data._id]">Order</button>
+  </div>
+
+}
+@else {
+  <div class="alert-danger m-0 p-0 my-5">
+    <p>{{errMsg}}</p>
+  </div>
+}
